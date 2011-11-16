@@ -1,0 +1,20 @@
+{
+  "name": "node-agilezen",
+    "version": "0.0.0",
+    "description": "AgileZen client for NodeJS",
+    "main": "lib/agilezen.js",
+    "licenses": [{
+      "type": "MIT",
+      "url":  "http://www.opensource.org/licenses/mit-license.php"
+    }],
+    "maintainers": [{
+      "name":  "Mark Borcherding",
+      "email": "markborcherding@gmail.com",
+      "web":   "https://github.com/MarkBorcherding"
+    }],
+    "repositories": [{
+      "type": "git",
+      "url":  "http://github.com/MarkBorcherding/node-agilezen.git"
+    }],
+    "dependencies": {}
+}
