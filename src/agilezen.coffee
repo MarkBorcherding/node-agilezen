@@ -12,7 +12,7 @@ class AgileZenClient
   showStory: (board,story,callback) ->
     options = @_prepareOptions
       method:'GET'
-      path:"#{baseUrl}/projects/#{board}/stories/#{story}"
+      path:"#{@baseUrl}/projects/#{board}/stories/#{story}"
     @_sendRequest options, callback
 
 
@@ -20,6 +20,7 @@ class AgileZenClient
     options.host = @host
     options.headers = options.headers || {}
     options.headers['X-Zen-ApiKey'] = @apikey
+    return options
 
   _sendRequest: (options, callback) ->
     req = https.request(options)
