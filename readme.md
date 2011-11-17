@@ -11,7 +11,7 @@ I am following [node-hipchat](http://search.npmjs.org/#/node-hipchat) as a patte
 
 AgileZen = require 'node-agilezen'
 agilezen = new AgileZen 'your api key'
-agilezen.showStory board, story, (data,err) ->
+agilezen.showStory board, story, (err,data) ->
   if data
     console.log data.text
   else

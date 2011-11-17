@@ -35,9 +35,9 @@ class AgileZenClient
         if callback?
           if res.statusCode is 200
             value = JSON.parse(buffer)
-            callback value, null
+            callback null, value
           else
-            callback null, buffer
+            callback buffer, null
     req.end()
 
 exports = module.exports = AgileZenClient
