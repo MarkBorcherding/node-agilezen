@@ -2,7 +2,7 @@
   "name": "node-agilezen",
   "author": "Mark Borcherding", 
   "homepage":"http://github.com/MarkBorcherding/node-agilezen",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "AgileZen client for NodeJS",
   "main": "lib/agilezen.js",
   "licenses": [{
