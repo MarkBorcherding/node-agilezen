@@ -23,7 +23,7 @@ class AgileZenClient
     return options
 
   _sendRequest: (options, callback) ->
-    req = https.request(options)
+    req = https.request options
 
     req.on 'response', (res) ->
       buffer = ''
@@ -34,7 +34,7 @@ class AgileZenClient
       res.on 'end', ->
         if callback?
           if res.statusCode is 200
-            value = JSON.parse(buffer)
+            value = JSON.parse buffer
             callback null, value
           else
             callback buffer, null
