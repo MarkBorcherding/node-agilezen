@@ -10,20 +10,31 @@ class AgileZenClient
   constructor:(@apikey) ->
 
   showStory: (board,story,callback) ->
-    options = @_prepareOptions
-      method:'GET'
-      path:"#{@baseUrl}/projects/#{board}/stories/#{story}"
-    @_sendRequest options, callback
+    options = prepareOptions
+      method : 'GET'
+      path   : "#{@baseUrl}/projects/#{board}/stories/#{story}"
+    sendRequest options, callback
+
+  commentOnStory: (board,story, comment, callback) ->
+    options = prepareOptions
+      method: 'POST'
+      path: "#{@baseUrl}/projects/#{board}/stories/#{story}/comments"
+      data:
+        text: comment
+
+    sendRequest options, callback
 
 
-  _prepareOptions: (options) ->
+  prepareOptions =  (options) ->
     options.host = @host
     options.headers = options.headers || {}
     options.headers['X-Zen-ApiKey'] = @apikey
     return options
 
-  _sendRequest: (options, callback) ->
+  sendRequest =  (options, callback) ->
     req = https.request options
+
+    req.write options.data if options.data
 
     req.on 'response', (res) ->
       buffer = ''
