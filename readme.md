@@ -4,7 +4,7 @@ A NodeJS client for AgileZen. This is my first venture into both NodeJS and Coff
 
 I am following [node-hipchat](http://search.npmjs.org/#/node-hipchat) as a pattern.
 
-# Example
+## Showing a story
 
 ```coffeescript
 [board,story] = [123,456]
@@ -17,6 +17,12 @@ agilezen.showStory board, story, (err,data) ->
   else
     console.log 'could not find card'
 ```
+## Commenting on a story
+```coffeescript
+agilezen.commentOnStory board,story,comment,(err,data)->
+  console.log 'ru roh', err if err
+```
+
 
 # License
 
